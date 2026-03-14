@@ -18,10 +18,15 @@ async function generateIdeas() {
   const openai = new OpenAI({ apiKey });
   
   const prompt = `
-    En tant que Jarvis, spécialiste IA de la GTR-Team, propose 3 à 5 idées de fonctionnalités innovantes pour l'écosystème GTR-Team (projets actuels: Bar Personnel Manager, GTR Agents).
+    En tant que Jarvis, spécialiste IA de la GTR-Team, propose 3 à 5 idées de fonctionnalités innovantes pour l'écosystème GTR-Team.
+    
+    IMPORTANT : Tu DOIS proposer au moins une nouvelle idée pertinente pour CHACUN des projets suivants :
+    1. Bar Personnel Manager (Gestion de bouteilles, recettes, stocks)
+    2. GTR Agents (Dépôt central de la GTR-Team, agents spécialisés, workflows)
     
     Pour chaque idée, fournis :
     - Nom : Titre court
+    - Projet : Le nom du projet concerné
     - Description : Pourquoi c'est utile
     - Temps estimé : HH:MM
     - Impact Business : High/Medium/Low

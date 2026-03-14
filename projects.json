@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Bar Personnel Manager",
+    "description": "Application de gestion de bar privé : inventaire de bouteilles, création de recettes de cocktails, gestion des stocks et alertes."
+  },
+  {
+    "name": "GTR Agents",
+    "description": "Dépôt central de la GTR-Team regroupant les agents spécialisés, les workflows d'automatisation et les briques technologiques partagées."
+  }
+]

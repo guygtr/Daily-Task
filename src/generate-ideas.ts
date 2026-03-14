@@ -6,11 +6,13 @@ dotenv.config();
 const apiKey = process.env.OPENAI_API_KEY;
 
 async function generateIdeas() {
-  console.log('**[JARVIS] →** Analyse des projets GTR-Team en cours...');
+  console.error('**[JARVIS] →** Analyse des projets GTR-Team en cours...');
   
   if (!apiKey || apiKey === 'your_api_key_here') {
-    console.log('**[JARVIS] →** Clé API manquante. Activation du mode Simulation pour le test initial.');
-    return simulateIdeas();
+    console.error('**[JARVIS] →** Clé API manquante. Activation du mode Simulation pour le test initial.');
+    const simulation = simulateIdeas();
+    console.log(simulation);
+    return simulation;
   }
 
   const openai = new OpenAI({ apiKey });
@@ -35,12 +37,14 @@ async function generateIdeas() {
     });
 
     const content = response.choices[0].message.content;
-    console.log('**[JARVIS] →** Idées générées avec succès.');
+    console.error('**[JARVIS] →** Idées générées avec succès.');
     console.log(content);
     return content;
   } catch (error) {
     console.error('**[JARVIS] →** Erreur lors de la génération :', error);
-    return simulateIdeas();
+    const simulation = simulateIdeas();
+    console.log(simulation);
+    return simulation;
   }
 }
 

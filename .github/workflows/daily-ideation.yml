@@ -1,0 +1,45 @@
+name: Daily Ideation 🧠
+
+on:
+  schedule:
+    # 9:00 AM EST = 14:00 UTC (Hiver)
+    - cron: '0 14 * * *'
+  workflow_dispatch: # Permet de lancer manuellement
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  ideate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate Ideas
+        id: ideas
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          npm run build
+          npm start > ideas_report.md
+
+      - name: Create GitHub Issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          DATE=$(date +'%Y-%m-%d')
+          gh issue create \
+            --title "Idées de Fonctionnalités - $DATE 🧠" \
+            --body-file ideas_report.md \
+            --label "innovation"

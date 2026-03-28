@@ -26,20 +26,27 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Generate Ideas
+      - name: Run Daily Routine (Maintenance & Security)
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run routine
+
+      - name: Generate New Ideas
         id: ideas
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GROK_API_KEY: ${{ secrets.GROK_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
-          npm run build
-          npm start > ideas_report.md
+          npm run generate > ideas_report.md
 
-      - name: Create GitHub Issue
+      - name: Create GitHub Issue Summary
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           DATE=$(date +'%Y-%m-%d')
           gh issue create \
-            --title "Idées de Fonctionnalités - $DATE 🧠" \
+            --title "Rapport Quotidien GTR - $DATE 🧠" \
             --body-file ideas_report.md \
             --label "innovation"

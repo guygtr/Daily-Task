@@ -1,10 +1,22 @@
 [
   {
     "name": "Bar Personnel Manager",
-    "description": "Application de gestion de bar privé : inventaire de bouteilles, création de recettes de cocktails, gestion des stocks et alertes."
+    "description": "Application de gestion de bar privé : inventaire de bouteilles, création de recettes de cocktails, gestion des stocks et alertes.",
+    "repo_name": "bar-personnel-manager"
+  },
+  {
+    "name": "Recettes familiales",
+    "description": "Application de gestion de recettes familiales : liste de recettes, création de recettes.",
+    "repo_name": "recettes-familiales"
   },
   {
     "name": "GTR Agents",
-    "description": "Dépôt central de la GTR-Team regroupant les agents spécialisés, les workflows d'automatisation et les briques technologiques partagées."
+    "description": "Dépôt central de la GTR-Team regroupant les agents spécialisés, les workflows d'automatisation et les briques technologiques partagées.",
+    "repo_name": "gtr-teams-agents"
+  },
+  {
+    "name": "GererMonEntreprise",
+    "description": "Système de gestion comptable et fiscale pour PME : scan de reçus par IA, suivi des dépenses, export Excel et tableau de bord de performance.",
+    "repo_name": "gerermonentreprise"
   }
 ]

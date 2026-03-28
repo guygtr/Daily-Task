@@ -7,15 +7,18 @@
     "start": "node dist/generate-ideas.js",
     "build": "tsc",
     "generate": "ts-node src/generate-ideas.ts",
+    "routine": "ts-node src/daily-maintenance.ts",
     "test": "echo \"Error: no test specified\" && exit 0"
   },
   "dependencies": {
+    "dotenv": "^16.4.5",
+    "octokit": "^5.0.5",
     "openai": "^4.28.0",
-    "dotenv": "^16.4.5"
+    "zod": "^3.25.76"
   },
   "devDependencies": {
-    "typescript": "^5.3.3",
+    "@types/node": "^20.11.24",
     "ts-node": "^10.9.2",
-    "@types/node": "^20.11.24"
+    "typescript": "^5.3.3"
   }
 }

@@ -6,18 +6,19 @@
 Chaque matin à **9h (Québec)**, le système analyse les projets existants et propose **3 à 5 idées de fonctionnalités** innovantes, réalistes et sécurisées.
 
 ## 🏗️ Architecture (Mario)
-Le projet suit une architecture stricte en **3 couches** pour garantir la robustesse et la maintenabilité :
+Le projet suit une architecture stricte en **3 couches** :
 
 1.  **Couche de Déclenchement (Trigger)** : Gérée par GitHub Actions via un planning `cron`.
-2.  **Couche Logique (Logic)** : Script TypeScript piloté par l'IA (Jarvis) pour la génération d'idées.
-3.  **Couche de Sortie (Output)** : Publication automatique sous forme de GitHub Issues.
+2.  **Couche Logique (Logic)** : Script TypeScript piloté par Jarvis, validé par **Zod** pour garantir l'intégrité des données.
+3.  **Couche de Sortie (Output)** : Publication automatique via **Octokit (API GitHub)** sous forme de GitHub Issues.
 
 ## 👥 La GTR-Team impliquée
-- **Elon** : Vision globale et validation stratégique.
-- **Jarvis** : Cerveau IA pour la génération d'idées pertinentes.
-- **Mario** : Architecte garant des 3 couches.
-- **Starship** : Expert en automatisation et workflows.
-- **Starlink & Luke** : Gardiens de la sécurité et de l'intégrité.
+- **Elon** : Vision globale.
+- **Jarvis** : Cerveau IA.
+- **Mario** : Architecte garant des schémas Zod.
+- **Altair** : Expert API et intégration GitHub.
+- **Starship** : Automatisation.
+- **Luke** : Gardien de la sécurité (secrets GITHUB_TOKEN/OPENAI_API_KEY).
 - **C-3PO** : Responsable de la clarté et de la documentation.
 
 ## 🚀 Comment ça marche ? (Pour débutant)

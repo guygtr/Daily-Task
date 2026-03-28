@@ -1,0 +1,172 @@
+{
+  "ideas": [
+    {
+      "title": "Tableau de Bord de Rentabilité",
+      "project_name": "Bar Personnel Manager",
+      "description": "Analyse automatique du coût par cocktail basé sur le stock.",
+      "estimated_time": "04:00",
+      "business_impact": "High",
+      "complexity": "Moyen"
+    },
+    {
+      "title": "Scan OCR Multilingue",
+      "project_name": "Recettes familiales",
+      "description": "Transcription ultra-précise de vieilles recettes manuscrites via Vision IA.",
+      "estimated_time": "06:00",
+      "business_impact": "High",
+      "complexity": "Avancé"
+    },
+    {
+      "title": "Hub de Déploiement Unifié",
+      "project_name": "GTR Agents",
+      "description": "Workflow centralisé pour redéployer n'importe quel projet du portfolio en un clic.",
+      "estimated_time": "03:00",
+      "business_impact": "Medium",
+      "complexity": "Moyen"
+    },
+    {
+      "title": "Tableau de Bord de Rentabilité",
+      "project_name": "Bar Personnel Manager",
+      "description": "Analyse automatique du coût par cocktail basé sur le stock.",
+      "estimated_time": "04:00",
+      "business_impact": "High",
+      "complexity": "Moyen"
+    },
+    {
+      "title": "Scan OCR Multilingue",
+      "project_name": "Recettes familiales",
+      "description": "Transcription ultra-précise de vieilles recettes manuscrites via Vision IA.",
+      "estimated_time": "06:00",
+      "business_impact": "High",
+      "complexity": "Avancé"
+    },
+    {
+      "title": "Hub de Déploiement Unifié",
+      "project_name": "GTR Agents",
+      "description": "Workflow centralisé pour redéployer n'importe quel projet du portfolio en un clic.",
+      "estimated_time": "03:00",
+      "business_impact": "Medium",
+      "complexity": "Moyen"
+    },
+    {
+      "title": "Tableau de Bord de Rentabilité",
+      "project_name": "Bar Personnel Manager",
+      "description": "Analyse automatique du coût par cocktail basé sur le stock.",
+      "estimated_time": "04:00",
+      "business_impact": "High",
+      "complexity": "Moyen"
+    },
+    {
+      "title": "Scan OCR Multilingue",
+      "project_name": "Recettes familiales",
+      "description": "Transcription ultra-précise de vieilles recettes manuscrites via Vision IA.",
+      "estimated_time": "06:00",
+      "business_impact": "High",
+      "complexity": "Avancé"
+    },
+    {
+      "title": "Hub de Déploiement Unifié",
+      "project_name": "GTR Agents",
+      "description": "Workflow centralisé pour redéployer n'importe quel projet du portfolio en un clic.",
+      "estimated_time": "03:00",
+      "business_impact": "Medium",
+      "complexity": "Moyen"
+    },
+    {
+      "title": "Amélioration UI : Tableau de Bord",
+      "project_name": "Bar Personnel Manager",
+      "description": "Analyse automatique du coût par cocktail (Généré à 22 h 25 min 50 s).",
+      "estimated_time": "04:00",
+      "business_impact": "High",
+      "complexity": "Moyen"
+    },
+    {
+      "title": "Amélioration UI : Scan OCR",
+      "project_name": "Recettes familiales",
+      "description": "Transcription ultra-précise de vieilles recettes (Généré à 22 h 25 min 50 s).",
+      "estimated_time": "06:00",
+      "business_impact": "High",
+      "complexity": "Avancé"
+    },
+    {
+      "title": "Amélioration UI : Hub GTR",
+      "project_name": "GTR Agents",
+      "description": "Workflow centralisé de déploiement (Généré à 22 h 25 min 50 s).",
+      "estimated_time": "03:00",
+      "business_impact": "Medium",
+      "complexity": "Moyen"
+    },
+    {
+      "title": "Nouveau module : Tableau de Bord",
+      "project_name": "Bar Personnel Manager",
+      "description": "Analyse automatique du coût par cocktail (Généré à 22 h 26 min 09 s).",
+      "estimated_time": "04:00",
+      "business_impact": "High",
+      "complexity": "Moyen"
+    },
+    {
+      "title": "Automatisation : Scan OCR",
+      "project_name": "Recettes familiales",
+      "description": "Transcription ultra-précise de vieilles recettes (Généré à 22 h 26 min 09 s).",
+      "estimated_time": "06:00",
+      "business_impact": "High",
+      "complexity": "Avancé"
+    },
+    {
+      "title": "Amélioration UI : Hub GTR",
+      "project_name": "GTR Agents",
+      "description": "Workflow centralisé de déploiement (Généré à 22 h 26 min 09 s).",
+      "estimated_time": "03:00",
+      "business_impact": "Medium",
+      "complexity": "Moyen"
+    },
+    {
+      "title": "Assistant Virtuel de Mixologie Personnalisée",
+      "project_name": "Bar Personnel Manager",
+      "description": "Intégrer un assistant virtuel basé sur l'IA qui propose des cocktails personnalisés en fonction des bouteilles disponibles dans l'inventaire de l'utilisateur. L'assistant pourrait également suggérer des achats pour compléter des recettes tendance ou saisonnières, tout en offrant des tutoriels interactifs (vidéos ou instructions vocales) pour améliorer l'expérience utilisateur. Cette idée est nouvelle car elle combine gestion de stock et interaction immersive pour les amateurs de mixologie.",
+      "estimated_time": "12:00",
+      "business_impact": "High",
+      "complexity": "Avancé"
+    },
+    {
+      "title": "Héritage Culinaire Numérisé",
+      "project_name": "Recettes familiales",
+      "description": "Développer une fonctionnalité de scan OCR avancée qui permet de numériser des recettes manuscrites ou imprimées (comme des carnets de grand-mère) avec reconnaissance de caractères et mise en forme automatique. Ajouter une option de 'timeline familiale' où les utilisateurs peuvent associer des anecdotes ou des souvenirs à chaque recette pour préserver l'héritage culturel. Cette idée est originale car elle met l'accent sur la transmission émotionnelle et l'organisation intuitive.",
+      "estimated_time": "08:30",
+      "business_impact": "Medium",
+      "complexity": "Moyen"
+    },
+    {
+      "title": "Orchestrateur de Workflows Dynamiques",
+      "project_name": "GTR Agents",
+      "description": "Créer un système d'orchestration intelligent qui permet de configurer des workflows d'automatisation inter-projets en fonction des besoins spécifiques de la GTR-Team. Par exemple, un agent pourrait automatiquement déclencher des mises à jour ou des tests sur plusieurs projets dès qu'une nouvelle brique technologique est intégrée. Cette idée est innovante car elle centralise et dynamise les processus d'automatisation, réduisant les interventions manuelles et optimisant l'infrastructure technique.",
+      "estimated_time": "15:00",
+      "business_impact": "High",
+      "complexity": "Avancé"
+    },
+    {
+      "title": "Recommandations de Cocktails Contextuelles",
+      "project_name": "Bar Personnel Manager",
+      "description": "Intégrer une fonctionnalité d'intelligence artificielle qui propose des recettes de cocktails en fonction des ingrédients disponibles dans l'inventaire, des préférences utilisateur (saveurs, alcools favoris) et même des conditions contextuelles (météo, événements spéciaux). Par exemple, suggérer un cocktail rafraîchissant par une journée chaude ou un cocktail festif pour un anniversaire. Cela améliore l'expérience utilisateur en rendant l'application plus intuitive et personnalisée, tout en optimisant l'utilisation des stocks physiques.",
+      "estimated_time": "12:30",
+      "business_impact": "High",
+      "complexity": "Moyen"
+    },
+    {
+      "title": "Archivage Visuel de Recettes Manuscrites",
+      "project_name": "Recettes familiales",
+      "description": "Développer une fonctionnalité de scan OCR avancée dédiée aux recettes manuscrites familiales, avec un mode de reconnaissance d'écriture manuscrite et de mise en page ancienne. L'application permettrait de numériser ces recettes, de les catégoriser automatiquement (entrées, plats, desserts) et de les lier à des photos ou anecdotes familiales pour préserver l'héritage culinaire. Cette idée renforce la transmission émotionnelle et culturelle tout en facilitant l'organisation des archives familiales.",
+      "estimated_time": "15:00",
+      "business_impact": "Medium",
+      "complexity": "Avancé"
+    },
+    {
+      "title": "Simulateur de Workflows Inter-Agents",
+      "project_name": "GTR Agents",
+      "description": "Créer un outil de simulation visuelle au sein de GTR Agents permettant de tester et d'optimiser les workflows d'automatisation avant leur déploiement. Cet outil offrirait une interface drag-and-drop pour connecter les agents spécialisés et les briques technologiques, avec une analyse prédictive des goulots d'étranglement ou des conflits potentiels. Cela améliore l'efficacité des processus inter-projets et réduit les erreurs lors de la mise en production, tout en renforçant l'infrastructure technique collaborative.",
+      "estimated_time": "20:00",
+      "business_impact": "High",
+      "complexity": "Avancé"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 @echo off
 echo **[YODA] →** Décollage de la routine quotidienne GTR-Team...
 
-cd /d "d:\GTR-Team-Project\Daily-Task"
+cd /d "d:\GTR-Daily-Task"
 
 echo **[JANITOR] →** Nettoyage et Automations...
 call npm run routine

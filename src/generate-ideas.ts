@@ -5,13 +5,18 @@ import * as path from 'path';
 import { z } from 'zod';
 import { GitHubService } from './github-service';
 
-const centralTokenPath = path.join(__dirname, '../../.tokens/gtr-tokens.env');
-const result = dotenv.config({ path: centralTokenPath, override: true });
+const isGitHubAction = process.env.GITHUB_ACTIONS === 'true';
 
-if (result.error) {
-  console.error(`**[MARIO] →** Erreur lors du chargement du coffre-fort ${centralTokenPath} :`, result.error.message);
+if (!isGitHubAction) {
+  const centralTokenPath = path.join(__dirname, '../../GTR-Team/.tokens/gtr-tokens.env');
+  if (fs.existsSync(centralTokenPath)) {
+    dotenv.config({ path: centralTokenPath, override: true });
+    console.error(`**[MARIO] →** Coffre-fort des tokens chargé avec succès depuis ${centralTokenPath}.`);
+  } else {
+    console.error(`**[MARIO] →** Coffre-fort local ${centralTokenPath} introuvable. Utilisation du contexte système.`);
+  }
 } else {
-  console.error(`**[MARIO] →** Coffre-fort des tokens chargé avec succès depuis ${centralTokenPath}.`);
+  console.error('**[MARIO] →** Environnement Cloud (GitHub Actions) détecté. Utilisation des Secrets GitHub.');
 }
 
 /**
@@ -21,8 +26,9 @@ if (result.error) {
 const ProjectSchema = z.object({
   name: z.string(),
   description: z.string(),
-  repo_owner: z.string().default('guygtr'), // Par défaut le compte principal
-  repo_name: z.string().optional()
+  repo_owner: z.string().default('guygtr'),
+  github_repo: z.string(),
+  disk_folder: z.string()
 });
 
 const IdeaSchema = z.object({
@@ -147,7 +153,6 @@ async function generateIdeas() {
   for (const idea of generatedContent.ideas) {
     const project = projects.find(p => p.name === idea.project_name);
     if (project) {
-      const repoName = project.repo_name || project.name.toLowerCase().replace(/\s+/g, '-');
       const body = `
 ### 💡 Nouvelle Idée : ${idea.title}
 
@@ -162,7 +167,7 @@ ${idea.description}
 *Généré automatiquement par Daily-Task (Jarvis v3.2)*
       `;
       
-      const success = await github.createIssue(project.repo_owner, repoName, `[IDEA] ${idea.title}`, body);
+      const success = await github.createIssue(project.repo_owner, project.github_repo, `[IDEA] ${idea.title}`, body);
       if (success) {
         newHistoryIdeas.push(idea);
       }
@@ -183,27 +188,46 @@ ${idea.description}
     console.error('**[JARVIS] →** Erreur lors de la sauvegarde de l\'historique.');
   }
 
-  // 5. Notification Discord (Automatique)
+  // 5. Notification Discord (Distincte par idée)
   const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
   if (webhookUrl && webhookUrl.startsWith('http')) {
-    console.error('**[C-3PO] →** Préparation de la notification Discord...');
-    const ideasSummary = generatedContent.ideas.map(idea => `**${idea.title}** (${idea.project_name})\n> ${idea.description}`).join('\n\n');
-    const message = `🧠 **GTR-Team : Nouvelles idées de fonctionnalités !**\n\n${ideasSummary}\n\n*Consultable sur GitHub (issues [IDEA])*`;
+    console.error('**[C-3PO] →** Préparation des notifications Discord...');
     
     try {
-      const response = await fetch(webhookUrl, {
+      // 1. Message d'en-tête
+      await fetch(webhookUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          content: message,
+          content: `🧠 **GTR-Team : ${generatedContent.ideas.length} nouvelles idées de fonctionnalités proposées !**`,
           username: "Jarvis (GTR-Team)",
           avatar_url: "https://mesagents.gtrtechnologies.com/logo.jpg"
         })
       });
-      if (response.ok) {
-        console.error('**[C-3PO] →** Notification Discord envoyée avec succès !');
-      } else {
-        console.error('**[C-3PO] →** Erreur lors de l\'envoi Discord (Status: ' + response.status + ')');
+
+      // 2. Un message par idée
+      for (const idea of generatedContent.ideas) {
+        let ideaMessage = `📌 **${idea.title}** (${idea.project_name})\n\n> ${idea.description}\n\n*Impact : ${idea.business_impact} | Complexité : ${idea.complexity} | Temps estimé : ${idea.estimated_time}*`;
+        
+        if (ideaMessage.length > 2000) {
+          ideaMessage = ideaMessage.substring(0, 1990) + "...";
+        }
+
+        const response = await fetch(webhookUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            content: ideaMessage,
+            username: "Jarvis (GTR-Team)",
+            avatar_url: "https://mesagents.gtrtechnologies.com/logo.jpg"
+          })
+        });
+        
+        if (response.ok) {
+          console.error(`**[C-3PO] →** Notification envoyée pour : ${idea.title}`);
+        } else {
+          console.error(`**[C-3PO] →** Erreur Discord pour ${idea.title} (Status: ${response.status})`);
+        }
       }
     } catch (error) {
       console.error('**[C-3PO] →** Erreur de connexion lors de l\'envoi Discord.');

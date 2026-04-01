@@ -3,15 +3,26 @@ import * as path from 'path';
 import * as dotenv from 'dotenv';
 import { execSync } from 'child_process';
 
-const centralTokenPath = path.join(__dirname, '../../.tokens/gtr-tokens.env');
-dotenv.config({ path: centralTokenPath, override: true });
+const isGitHubAction = process.env.GITHUB_ACTIONS === 'true';
+
+if (!isGitHubAction) {
+  const centralTokenPath = path.join(__dirname, '../../GTR-Team/.tokens/gtr-tokens.env');
+  if (fs.existsSync(centralTokenPath)) {
+    dotenv.config({ path: centralTokenPath, override: true });
+  }
+}
 
 const projectsPath = path.join(__dirname, '../projects.json');
-const memoryPath = path.join(__dirname, '../../.agents/gtr-memory.md');
+const memoryPath = isGitHubAction ? '' : path.join(__dirname, '../../GTR-Team/.agents/gtr-memory.md');
 const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
 
 async function runRoutine() {
   console.error('**[YODA] →** Début de la routine quotidienne GTR-Team...');
+  
+  if (isGitHubAction) {
+    console.error('**[YODA] →** Environnement Cloud détecté. Saut de la maintenance disque locale.');
+    return;
+  }
   
   const projects = JSON.parse(fs.readFileSync(projectsPath, 'utf-8'));
   let summary = "";
@@ -21,7 +32,7 @@ async function runRoutine() {
   summary += "### 🧹 Maintenance (Janitor)\n";
   
   for (const project of projects) {
-    const projectPath = path.join(__dirname, '../../', project.repo_name || '');
+    const projectPath = path.join(__dirname, '../../', project.disk_folder || '');
     if (fs.existsSync(projectPath)) {
       try {
         // Nettoyage léger (dist, .next)
@@ -48,7 +59,7 @@ async function runRoutine() {
   let securityIssues = [];
 
   for (const project of projects) {
-    const projectPath = path.join(__dirname, '../../', project.repo_name || '');
+    const projectPath = path.join(__dirname, '../../', project.disk_folder || '');
     if (fs.existsSync(projectPath)) {
       try {
         const files = getAllFiles(projectPath, ['node_modules', '.git', '.next', 'dist', 'out']);

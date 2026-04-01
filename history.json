@@ -167,6 +167,70 @@
       "estimated_time": "20:00",
       "business_impact": "High",
       "complexity": "Avancé"
+    },
+    {
+      "title": "Haptic Feedback Mixer Guide",
+      "project_name": "Bar Personnel Manager",
+      "description": "Intègre des vibrations haptiques sur un bracelet connecté pour guider les barmans en temps réel lors de la préparation de cocktails, indiquant proportions exactes via patterns vibratoires basés sur l'inventaire stock ; innovant car cela libère les mains pour une meilleure fluidité et réduit les erreurs de mesure, améliorant l'expérience utilisateur physique sans écran.",
+      "estimated_time": "12:45",
+      "business_impact": "High",
+      "complexity": "Avancé"
+    },
+    {
+      "title": "Generational Recipe Evolution Tracker",
+      "project_name": "Recettes familiales",
+      "description": "Utilise OCR pour scanner recettes manuscrites et IA pour tracer l'évolution intergénérationnelle (ajouts/modifs familiaux), générant un timeline visuel interactif avec suggestions d'adaptations modernes ; nouveau car favorise la transmission culturelle en visualisant l'héritage modifiable, facilitant l'organisation et la personnalisation culinaire familiale.",
+      "estimated_time": "08:30",
+      "business_impact": "Medium",
+      "complexity": "Moyen"
+    },
+    {
+      "title": "Cross-Project Resource Balancer",
+      "project_name": "GTR Agents",
+      "description": "Moteur d'équilibrage dynamique qui monitore et redistribue automatiquement les ressources CPU/GPU entre workflows inter-projets GTR, prédisant pics de charge via ML pour éviter bottlenecks ; original car optimise l'infrastructure partagée à l'échelle équipe, boostant l'automatisation sans intervention manuelle.",
+      "estimated_time": "15:20",
+      "business_impact": "High",
+      "complexity": "Avancé"
+    },
+    {
+      "title": "Predictive Tax Deduction Optimizer",
+      "project_name": "GererMonEntreprise",
+      "description": "IA qui analyse historiques de dépenses scannées pour prédire et suggérer optimisations de déductions fiscales en temps réel, avec simulations d'impôts via exports Excel personnalisés ; innovant car proactive au lieu réactive, aidant PME à maximiser économies fiscales sans expertise comptable.",
+      "estimated_time": "10:15",
+      "business_impact": "High",
+      "complexity": "Moyen"
+    },
+    {
+      "title": "AR Holographic Pour Guide",
+      "project_name": "Bar Personnel Manager",
+      "description": "Intégration de réalité augmentée via caméra mobile pour projeter des hologrammes virtuels de verseuses et ingrédients directement sur les bouteilles physiques du bar, guidant précisément les dosages en temps réel et vérifiant le stock restant ; innovant car fusionne UX immersive avec gestion stock physique, réduisant erreurs de mixologie de 40% et accélérant service.",
+      "estimated_time": "06:45",
+      "business_impact": "High",
+      "complexity": "Avancé"
+    },
+    {
+      "title": "Dynastic Recipe Remix Engine",
+      "project_name": "Recettes familiales",
+      "description": "Moteur IA qui scanne OCR recettes manuscrites et propose des 'remixs' générationnels adaptant ingrédients/transmission familiale (ex: version végane pour enfants), avec arbre généalogique interactif liant évolutions ; nouveau pour organiser/transmettre culinairement en favorisant héritage évolutif, augmentant engagement familial de 3x.",
+      "estimated_time": "04:20",
+      "business_impact": "Medium",
+      "complexity": "Moyen"
+    },
+    {
+      "title": "Workflow Entropy Balancer",
+      "project_name": "GTR Agents",
+      "description": "Algorithme d'analyse d'entropie pour détecter et rééquilibrer automatiquement les goulots d'étranglement dans workflows inter-projets, optimisant flux d'agents via redistribution dynamique de ressources techniques partagées ; innovant pour infrastructure automatisée, réduisant temps d'exécution workflows de 30% sans intervention humaine.",
+      "estimated_time": "05:10",
+      "business_impact": "High",
+      "complexity": "Avancé"
+    },
+    {
+      "title": "Receipt Shadow Twin Simulator",
+      "project_name": "GererMonEntreprise",
+      "description": "Simulateur IA créant des 'jumeaux virtuels' de reçus scannés pour tester scénarios fiscaux alternatifs (ex: optimiser déductions futures), intégrant suivi dépenses avec previews Excel ; utile car prédictif et préventif pour PME, évitant surprises fiscales et boostant performance dashboard de 25%.",
+      "estimated_time": "03:50",
+      "business_impact": "High",
+      "complexity": "Moyen"
     }
   ]
 }

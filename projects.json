@@ -22,5 +22,11 @@
     "description": "Système de gestion comptable et fiscale pour PME : scan de reçus par IA, suivi des dépenses, export Excel et tableau de bord de performance.",
     "github_repo": "GererMonEntreprise",
     "disk_folder": "GTR-GererMonEntreprise"
+  },
+  {
+    "name": "GTR-Bourses",
+    "description": "Gestion de portefeuilles d'actions multi-devises (CAD/USD) avec suivi du coût moyen, graphiques de performance et sécurité Supabase.",
+    "github_repo": "GTR-Bourses",
+    "disk_folder": "GTR-Bourses"
   }
 ]

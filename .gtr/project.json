@@ -1,14 +1,14 @@
-﻿{
-    "version":  "1.0.0",
-    "project_id":  "daily-task",
+{
+    "name":  "GTR-Daily-Task",
+    "role":  "Description of the project\u0027s purpose",
     "urls":  {
-                 "staging":  "https://STAGING_A_DEFINIR",
-                 "production":  "https://daily.gtremblay.com"
+                 "production":  "https://example.gtremblay.com",
+                 "staging":  ""
              },
-    "fleet_role":  "Planificateur de tâches IA et routines quotidiennes",
-    "stack_overrides":  {
-                            "database":  "Supabase",
-                            "orm":  "Prisma 6.x"
-                        },
-    "project_name":  "GTR Daily Task"
+    "stack":  [
+                  "Next.js",
+                  "Prisma",
+                  "Supabase",
+                  "TailwindCSS"
+              ]
 }

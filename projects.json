@@ -28,5 +28,11 @@
     "description": "Gestion de portefeuilles d'actions multi-devises (CAD/USD) avec suivi du coût moyen, graphiques de performance et sécurité Supabase.",
     "github_repo": "GTR-Bourses",
     "disk_folder": "GTR-Bourses"
+  },
+  {
+    "name": "GTR-Pickelball",
+    "description": "Application de gestion de scores et de tournois pour le Pickleball. Intégration de la suite GTR-Sport.",
+    "github_repo": "gtr-pickelball",
+    "disk_folder": "GTR-Pickelball"
   }
 ]

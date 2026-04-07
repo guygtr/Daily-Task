@@ -194,6 +194,9 @@ ${idea.description}
     console.error('**[C-3PO] →** Préparation des notifications Discord...');
     
     try {
+      // Helper pour le délai
+      const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+
       // 1. Message d'en-tête
       await fetch(webhookUrl, {
         method: 'POST',
@@ -205,8 +208,11 @@ ${idea.description}
         })
       });
 
-      // 2. Un message par idée
+      // 2. Un message par idée (avec délai de 5s pour éviter le Rate Limit Discord)
       for (const idea of generatedContent.ideas) {
+        // Attente de 5 secondes avant chaque message
+        await sleep(5000);
+        
         let ideaMessage = `📌 **${idea.title}** (${idea.project_name})\n\n> ${idea.description}\n\n*Impact : ${idea.business_impact} | Complexité : ${idea.complexity} | Temps estimé : ${idea.estimated_time}*`;
         
         if (ideaMessage.length > 2000) {
